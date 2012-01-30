@@ -20,14 +20,14 @@ public interface XQInsertOptions
 {
   public static final String DEFAULT_ENCODING = "UTF-8";
 
-	/**
-	 * Sets the encoding of the content. The default is UTF-8.
-	**/
-	public void setEncoding(String encoding);
+  /**
+   * Sets the encoding of the content. The default is UTF-8.
+  **/
+  public void setEncoding(String encoding);
 
-	/**
-	 * Retrieves the encoding of the content.
-	**/
-	public String getEncoding();
+  /**
+   * Retrieves the encoding of the content.
+  **/
+  public String getEncoding();
 
 }
