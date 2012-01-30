@@ -23,46 +23,46 @@ import javax.xml.xquery.XQException;
 
 public interface XQConnection2 extends XQConnection
 {
-	/**
-	 * Creates a Module Proxy, a Java Facade of an XQuery Library Module.
-	 *
-	 * Invoking methods on the returned instance will manifest in the implementation
-	 * calling XQuery functions contained within the specified XQuery Library Module.
-	 *
-	 * Java method parameters are mapped to XQuery function parameters according to
-	 * the mapping rules outlined in the XQJ2 specification.
-	 *
-	 * The XDM result of calling the XQuery function will be mapped into the
-	 * Java interface's expected return type for that method, if possible.
-	 *
-	 * @param namespaceUri the Namespace URI of the XQuery Library Module, required parameter.
-	 * @param moduleUri the URI of the XQuery Library Module, null is permitted.
-	 * @param clazz a regular Java interface class, acting as the Facade for the XQuery Library Module.
-	 * @return an instance of the interface class supplied in the clazz parameter.
-	**/
+  /**
+   * Creates a Module Proxy, a Java Facade of an XQuery Library Module.
+   *
+   * Invoking methods on the returned instance will manifest in the implementation
+   * calling XQuery functions contained within the specified XQuery Library Module.
+   *
+   * Java method parameters are mapped to XQuery function parameters according to
+   * the mapping rules outlined in the XQJ2 specification.
+   *
+   * The XDM result of calling the XQuery function will be mapped into the
+   * Java interface's expected return type for that method, if possible.
+   *
+   * @param namespaceUri the Namespace URI of the XQuery Library Module, required parameter.
+   * @param moduleUri the URI of the XQuery Library Module, null is permitted.
+   * @param clazz a regular Java interface class, acting as the Facade for the XQuery Library Module.
+   * @return an instance of the interface class supplied in the clazz parameter.
+  **/
   public <T> T createXQModuleProxy(
     String namespaceUri,
     String moduleUri,
     Class<T> clazz) throws XQException;
 
-	/**
-	 * Creates a Module Proxy, a Java Facade of an XQuery Library Module.
-	 *
-	 * Invoking methods on the returned instance will manifest in the implementation
-	 * calling XQuery functions contained within the specified XQuery Library Module.
-	 *
-	 * Java method parameters are mapped to XQuery function parameters according to
-	 * the mapping rules outlined in the XQJ2 specification.
-	 *
-	 * The XDM result of calling the XQuery function will be mapped into the
-	 * Java interface's expected return type for that method, if possible.
-	 *
-	 * @param namespaceUri the Namespace URI of the XQuery Library Module, required parameter.
-	 * @param moduleUri the URI of the XQuery Library Module, null is permitted.
-	 * @param clazz a regular Java interface class, acting as the Facade for the XQuery Library Module.
-	 * @param properties the static context properties, which the XQuery Module Proxy should run against.
-	 * @return an instance of the interface class supplied in the clazz parameter.
-	**/
+  /**
+   * Creates a Module Proxy, a Java Facade of an XQuery Library Module.
+   *
+   * Invoking methods on the returned instance will manifest in the implementation
+   * calling XQuery functions contained within the specified XQuery Library Module.
+   *
+   * Java method parameters are mapped to XQuery function parameters according to
+   * the mapping rules outlined in the XQJ2 specification.
+   *
+   * The XDM result of calling the XQuery function will be mapped into the
+   * Java interface's expected return type for that method, if possible.
+   *
+   * @param namespaceUri the Namespace URI of the XQuery Library Module, required parameter.
+   * @param moduleUri the URI of the XQuery Library Module, null is permitted.
+   * @param clazz a regular Java interface class, acting as the Facade for the XQuery Library Module.
+   * @param properties the static context properties, which the XQuery Module Proxy should run against.
+   * @return an instance of the interface class supplied in the clazz parameter.
+  **/
   public <T> T createXQModuleProxy(
     String namespaceUri,
     String moduleUri,
