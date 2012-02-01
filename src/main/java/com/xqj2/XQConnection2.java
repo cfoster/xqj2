@@ -40,7 +40,7 @@ public interface XQConnection2 extends XQConnection
    * @param clazz a regular Java interface class, acting as the Facade for the XQuery Library Module.
    * @return an instance of the interface class supplied in the clazz parameter.
   **/
-  public <T> T createXQModuleProxy(
+  public <T> T createModuleProxy(
     String namespaceUri,
     String moduleUri,
     Class<T> clazz) throws XQException;
@@ -63,7 +63,7 @@ public interface XQConnection2 extends XQConnection
    * @param properties the static context properties, which the XQuery Module Proxy should run against.
    * @return an instance of the interface class supplied in the clazz parameter.
   **/
-  public <T> T createXQModuleProxy(
+  public <T> T createModuleProxy(
     String namespaceUri,
     String moduleUri,
     Class<T> clazz,
