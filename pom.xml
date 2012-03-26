@@ -137,12 +137,12 @@
 		<repository>
 			<id>github-xqj-text</id>
 			<name>XQJ repository</name>
-			<url>https://raw.github.com/cfoster/xqj/master</url>
+			<url>https://raw.github.com/cfoster/xqj-api/master</url>
 		</repository>
 		<repository>
 			<id>github-xqj-blob</id>
 			<name>XQJ repository</name>
-			<url>https://github.com/cfoster/xqj/raw/master</url>
+			<url>https://github.com/cfoster/xqj-api/raw/master</url>
 		</repository>
 	</repositories>
 
