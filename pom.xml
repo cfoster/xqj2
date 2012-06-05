@@ -7,7 +7,7 @@
 	<groupId>com.xqj2</groupId>
 	<artifactId>xqj2</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>xqj2</name>
 
 	<description>XQJ2 proposed extensions to the XQJ API (JSR 225)</description>
@@ -92,6 +92,13 @@
 				</configuration>
 			</plugin>
 		</plugins>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh</artifactId>
+        <version>2.2</version>
+      </extension>
+    </extensions>
 	</build>
 
 	<dependencies>
@@ -128,12 +135,21 @@
 							</execution>
 						</executions>
 					</plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.7</version>
+          </plugin>
 				</plugins>
 			</build>
 		</profile>
 	</profiles>
 
 	<repositories>
+    <repository>
+      <id>xqj.net</id>
+      <url>http://xqj.net/maven</url>
+    </repository>
 		<repository>
 			<id>github-xqj-text</id>
 			<name>XQJ repository</name>
@@ -145,5 +161,13 @@
 			<url>https://github.com/cfoster/xqj-api/raw/master</url>
 		</repository>
 	</repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>xqjmvn</id>
+      <name>XQJ Maven Repository</name>
+      <url>scp://std5.imagineis.com/home/cfoster/www.xqj.net/html/maven</url>
+    </repository>
+  </distributionManagement>
 
 </project>
