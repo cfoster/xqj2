@@ -59,11 +59,11 @@ public interface XQMetaData2 extends XQMetaData
   // -----------------------------------------------------------------
 
   /**
-   * Query if XQuery 1.0 Update Facility extensions are supported by this
-	 * data source.
+   * Query if XQuery Update Facility extensions are supported by this
+   * data source.
    *
    * <p>Determines if this data source is capable of executing
-   * XQuery 1.0 syntax which contain updating expressions.</p>
+   * XQuery syntax which contain updating expressions.</p>
    *
    * <p>Refer to the
    * <a href="http://www.w3.org/TR/xquery-update-10/">
@@ -76,10 +76,10 @@ public interface XQMetaData2 extends XQMetaData
   public boolean isXQueryUpdateFacilitySupported() throws XQException;
 
   /**
-   * Query if XQuery 1.0 Full Text extensions are supported by this data source.
+   * Query if XQuery Full Text extensions are supported by this data source.
    *
    * <p>Determines if this data source is capable of executing
-   * XQuery 1.0 syntax which contains full text expressions.</p>
+   * XQuery syntax which contains full text expressions.</p>
    *
    * <p>Refer to the
    * <a href="http://www.w3.org/TR/xpath-full-text-10/">
@@ -106,45 +106,6 @@ public interface XQMetaData2 extends XQMetaData
    * @exception XQException if the connection is no longer valid
   **/
   public boolean isXQuery30Supported() throws XQException;
-
-  /**
-   * Query if XQuery 3.0 Update Facility extensions are supported by this
-   * data source.
-   *
-   * <p>Determines if this data source is capable of executing
-   * XQuery 3.0 syntax which contain updating expressions.</p>
-   *
-   * <p>Refer to the
-   * <a href="http://www.w3.org/TR/xquery-update-30/">
-   * <i>XQuery Update Facility 3.0</i></a>
-   * specification for more information.</p>
-   *
-   * @return <code>true</code> if so; otherwise <code>false</code>
-   * @exception XQException if the connection is no longer valid
-  **/
-	// This method is probably not necessary.
-	// Marked for removal.
-  // public boolean isXQuery30UpdateFacilitySupported() throws XQException;
-
-  /**
-   * Query if XQuery 3.0 Full Text extensions are supported by this data source.
-   *
-   * <p>Determines if this data source is capable of executing
-   * XQuery 3.0 syntax which contains full text expressions.</p>
-   *
-   * <p>Refer to the
-   * <a href="http://www.w3.org/TR/xpath-full-text-30/">
-   * <i>XQuery and XPath Full Text 3.0</i></a>
-   * specification for more information.</p>
-   *
-   * @return <code>true</code> if so; otherwise <code>false</code>
-   * @exception XQException if the connection is no longer valid
-  **/
-	// This method is probably not necessary.
-	// Marked for removal.
-  // public boolean isXQuery30FullTextSupported() throws XQException;
-
-  // -----------------------------------------------------------------
 
 }
 
