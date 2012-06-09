@@ -19,6 +19,12 @@ package com.xqj2;
 import javax.xml.xquery.XQMetaData;
 import javax.xml.xquery.XQException;
 
+/**
+ * Extended interface which implements functionality that is missing from
+ * {@link XQMetaData}, based on findings whilst trying to implement
+ * XQJ API v1.0.
+**/
+
 public interface XQMetaData2 extends XQMetaData
 {
   // -----------------------------------------------------------------
@@ -106,6 +112,22 @@ public interface XQMetaData2 extends XQMetaData
    * @exception XQException if the connection is no longer valid
   **/
   public boolean isXQuery30Supported() throws XQException;
+
+  // -----------------------------------------------------------------
+
+  // -----------------------------------------------------------------
+  // XA transactions support
+  // -----------------------------------------------------------------
+
+  /**
+   * Query if XA transactions are supported by this data source.
+   *
+   * @return <code>true</code> if so; otherwise <code>false</code>
+   * @exception XQException if the connection is no longer valid
+  **/
+  public boolean isXASupported() throws XQException;
+
+  // -----------------------------------------------------------------
 
 }
 

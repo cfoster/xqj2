@@ -7,7 +7,7 @@
 	<groupId>com.xqj2</groupId>
 	<artifactId>xqj2</artifactId>
 	<packaging>jar</packaging>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 	<name>xqj2</name>
 
 	<description>XQJ2 proposed extensions to the XQJ API (JSR 225)</description>
@@ -70,6 +70,7 @@
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<links>
+						<link>http://xqj.net/javadoc/</link>
 						<link>http://java.sun.com/javase/6/docs/api/</link>
 					</links>
 				</configuration>

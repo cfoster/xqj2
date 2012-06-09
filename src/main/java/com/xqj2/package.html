@@ -1,0 +1,29 @@
+<body>
+Contains proposed additions to the
+<a target="_blank" href="http://jcp.org/en/jsr/detail?id=225">
+XQuery API for Java™ 1.0</a>.
+<p>
+Interface classes often extend existing
+<a target="_blank" href="http://xqj.net/javadoc">XQJ interface classes</a>
+and do not break the
+<a target="_blank" href="http://jcp.org/en/jsr/detail?id=225">
+XQJ Specification</a>, for instance <code>XQConnection2</code> simply extends
+<code>XQConnection</code>, so the user of an XQJ implementation can only make
+use of
+<a target="_blank" href="http://xqj2.com">XQJ2</a> features by explicitly
+casting a standard XQJ object into an XQJ2 instance which has everything the
+previous instance had and more, for instance:
+</p>
+
+<pre>
+  XQConnection xqc = xqds.getConnection();
+  XQConnection2 xqc2 = (XQConnection2)conn;
+
+  // or quicker approach ...
+
+  XQConnection2 conn = (XQConnection2)xqds.getConnection();
+</pre>
+
+<p>Despite the XQJ2 API being experimental, effort has been made to keep
+different versions of XQJ2 compatible between releases.</p>
+</body>
