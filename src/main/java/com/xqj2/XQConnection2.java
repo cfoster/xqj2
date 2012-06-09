@@ -202,9 +202,9 @@ public interface XQConnection2 extends XQConnection
 
   /**
    * Gets the transaction timeout of the connection, in seconds.
-	 *
-	 * <p>If the value returned is <code>0</code>, then manual transactions
-	 * will wait indefinitely.</p>
+   *
+   * <p>If the value returned is <code>0</code>, then manual transactions
+   * will wait indefinitely.</p>
    *
    * @return the transaction timeout of the connection, in seconds.
    * @throws  XQException if any of the following is true
@@ -218,7 +218,7 @@ public interface XQConnection2 extends XQConnection
 
   /**
    * Gets the <code>XAResource<code> associated with the connection.
-	 *
+   *
    * @return a <code>XAResource</code> object, associated with this connection.
    * @throws  XQException if any of the following is true
    *          <ol>
