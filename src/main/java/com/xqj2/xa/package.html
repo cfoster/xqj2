@@ -22,6 +22,18 @@ classes in this package, rather an Application Server should make use of the
 classes found here.
 </p>
 
+<h3>Effects on local transaction management</h3>
+
+<p>While connection objects are participating in distributed transactions,
+invoking any of following methods <code>XQConnection</code> methods will cause
+an <code>XQException</code> to be thrown:</p>
+
+<ul>
+	<li><code>setAutoCommit(true)</code></li>
+	<li><code>commit()</code></li>
+	<li><code>rollback()</code></li>
+</ul>
+
 <h3>Example: Using XA classes</h3>
 
 <p>The following example shows simple usage of the XA classes.
