@@ -138,44 +138,35 @@ public interface XQConnection2 extends XQConnection
     XQInsertOptions options) throws XQException;
 
   /**
-   * Sets the transaction mode of the connection.
+   * Puts this connection in read-only mode as a hint to the driver to enable
+   * database optimizations.
    *
-   * <p>The value of <code>transactionMode</code> must be one of the following:
-   *   <ul>
-   *     <li>{@link XQConstants2#TRANSACTION_MODE_UPDATE}</li>
-   *     <li>{@link XQConstants2#TRANSACTION_MODE_READONLY}</li>
-   *   </ul>
-   * </p>
+   * <p><strong>Note:</strong> This method cannot be called during
+   * a transaction.</p>
    *
-   * @param transactionMode Must be either
-   *                        {@link XQConstants2#TRANSACTION_MODE_UPDATE}
-   *                        or
-   *                        {@link XQConstants2#TRANSACTION_MODE_READONLY}
-   * @throws                XQException if any of the following is true
-   *                        <ol>
-   *                         <li>the value of <code>transactionMode</code>
-   *                             is neither
-   *                             {@link XQConstants2#TRANSACTION_MODE_UPDATE} or
-   *                             {@link XQConstants2#TRANSACTION_MODE_READONLY}
-   *                         </li>
-   *                         <li>the connection object has been closed</li>
-   *                         <li>the vendor does not support transactions
-   *                             in the manner requested</li>
-   *                         <li>an implementation issue occurred whilst
-   *                             changing the transaction mode</li>
-   *                        </ol>
+   * @param readOnly     true enables read-only mode; false disables it
+   *
+   * @throws             XQException if any of the following is true
+   *                     <ol>
+   *                      <li>If this connection object is currently in the
+   *                          process of executing a transaction</li>
+   *                      <li>the connection object has been closed</li>
+   *                      <li>the vendor does not support transactions
+   *                          in the manner requested</li>
+   *                      <li>an implementation issue occurred whilst
+   *                          changing the transaction mode</li>
+   *                     </ol>
   **/
-  public void setTransactionMode(int transactionMode) throws XQException;
+  public void setReadOnly(boolean readOnly) throws XQException;
 
   /**
-   * Gets the transaction mode being used by the connection.
+   * Retrieves whether the connection object is in read-only mode.
    *
-   * @return              The transaction mode of the connection, which will
-   *                      either be {@link XQConstants2#TRANSACTION_MODE_UPDATE}
-   *                      or {@link XQConstants2#TRANSACTION_MODE_READONLY}
+   * @return <code>true</code> if the connection object is read-only;
+   *         <code>false</code> otherwise
    * @throws XQException  if this connection object is closed
   **/
-  public int getTransactionMode() throws XQException;
+  public boolean isReadOnly() throws XQException;
 
   /**
    * Sets the transaction timeout of the connection, in seconds.
@@ -196,7 +187,6 @@ public interface XQConnection2 extends XQConnection
    *                        <li>the implementation does not support a
    *                            manual transaction time out mechanism</li>
    *                      </ol>
-
   **/
   public void setTransactionTimeout(int seconds) throws XQException;
 

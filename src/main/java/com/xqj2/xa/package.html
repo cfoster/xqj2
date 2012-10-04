@@ -1,0 +1,52 @@
+﻿<body>
+
+Contains classes which allow <code>XQConnection</code> objects to participate
+in distributed transactions.
+
+<p>
+Generally, an application programmer does not have to deal directly with
+classes in this package, rather an Application Server should make use of the
+classes found here.
+</p>
+
+<h3>Example: Using XA classes</h3>
+
+<p>The following example shows simple usage of the XA classes.
+Keep in mind that the details would be filled in with work using
+other data sources. This type of code usually appears within a
+transaction manager.</p>
+
+<pre>
+// Create an XA data source for making the XA connection.
+XAXQDataSource xaDataSource = new AcmeXADataSource();
+
+// Get an XAConnection and get the associated XAResource.
+// This provides access to the resource manager.
+XAConnection xaConnection = xaDataSource.getXAConnection();
+XAResource xaResource = xaConnection.getXAResource();
+
+// Generate a new Xid (this is up to the transaction manager).
+Xid xid = ...;
+
+// Start the transaction.
+xaResource.start(xid, XAResource.TMNOFLAGS);
+
+// ...Do some work with the database...
+
+// End the transaction.
+xaResource.end(xid, XAResource.TMSUCCESS);
+
+// Prepare for a commit.
+xaResource.prepare(xid);
+
+// Commit the transaction.
+xaResource.commit(xid, false);
+
+// Close the XA connection when done.  This implicitly
+// closes the XA resource.
+xaConnection.close();
+</pre>
+
+<p>Not all XQJ2 implementations are required to support XA functionality.</p>
+
+</body>
