@@ -3,6 +3,19 @@
 Contains classes which allow <code>XQConnection</code> objects to participate
 in distributed transactions.
 
+<p>The XQJ 1.0 Specification supports local case transactions involving a
+single data source, but does not provide support for distributed transactions
+where a single transaction involves multiple connections to one or more
+underlying data sources. A global transaction across multiple data
+sources must either commit successfully across all data sources or in the event
+of one data source failing to commit, all data sources must be rolled back.</p>
+
+<p>The XQJ2 Specification makes use of the Java Transaction API&trade;
+(JTA&trade;) in order to enable <code>XQConnection</code> objects to
+participate in distributed transactions. The design of XA transaction
+management in the XQJ2 API has been influenced by XA transaction management
+that exists in the JDBC API.</p>
+
 <p>
 Generally, an application programmer does not have to deal directly with
 classes in this package, rather an Application Server should make use of the
