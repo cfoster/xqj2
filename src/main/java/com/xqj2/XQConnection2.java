@@ -188,7 +188,9 @@ public interface XQConnection2 extends XQConnection
    *                            manual transaction time out mechanism</li>
    *                      </ol>
   **/
-  public void setTransactionTimeout(int seconds) throws XQException;
+  // ---- No Longer Required ----
+  // public void setTransactionTimeout(int seconds) throws XQException;
+  // ---- No Longer Required ----
 
   /**
    * Gets the transaction timeout of the connection, in seconds.
@@ -204,7 +206,9 @@ public interface XQConnection2 extends XQConnection
    *                manual transaction time out mechanism</li>
    *          </ol>
   **/
-  public int getTransactionTimeout() throws XQException;
+  // ---- No Longer Required ----
+  // public int getTransactionTimeout() throws XQException;
+  // ---- No Longer Required ----
 
   /**
    * Gets the <code>XAResource<code> associated with the connection.
@@ -216,6 +220,8 @@ public interface XQConnection2 extends XQConnection
    *            <li>the implementation does not support XA transactions</li>
    *          </ol>
   **/
-  public XAResource getXAResource() throws XQException;
+  // ---- No Longer Required ----
+  // public XAResource getXAResource() throws XQException;
+  // ---- No Longer Required ----
 
 }

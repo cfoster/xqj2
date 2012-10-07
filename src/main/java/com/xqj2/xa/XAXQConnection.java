@@ -35,14 +35,19 @@ import javax.transaction.xa.XAResource;
 public interface XAXQConnection extends PooledXQConnection
 {
   /**
-   * Retrieves an <code>XAResource</code> object that the transaction manager
-   * will use to manage this <code>XAXQConnection</code> object's
-   * participation in a distributed transaction
+   * Gets the <code>XAResource<code> associated with the connection.
    *
-   * @return the XAResource object
+   * A transaction manager can use the <code>XAResource</code> to manage
+   * this <code>XAXQConnection</code> object's participation in a
+   * distributed transaction.
    *
-   * @throws XQException if a database access error occurs or if the XQJ driver
-   *                     does not support this method
+   * @return the <code>XAResource</code> object associated with this connection
+   * @throws  XQException if any of the following is true
+   *          <ol>
+   *            <li>the connection object is closed</li>
+   *            <li>a database access error occurs</li>
+   *            <li>the implementation does not support XA transactions</li>
+   *          </ol>
   **/
   public XAResource getXAResource() throws XQException;
 }
