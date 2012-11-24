@@ -22,6 +22,15 @@ classes in this package, rather an Application Server should make use of the
 classes found here.
 </p>
 
+<h3>Scope of distributed transactions</h3>
+
+<p>An <code>XQConnection</code> is considered to be particpating in a
+distributed transaction between the invocation of <code>XAResource.start</code>
+and <code>XAResource.end</code> methods. After the invocation of the
+<code>XAResource.end</code> method, the <code>XQConnection</code> will continue
+to operate in a local transaction mode and will behave like a regular
+<code>XQConnection</code>.</p>
+
 <h3>Effects on local transaction management</h3>
 
 <p>While connection objects are participating in distributed transactions,
@@ -33,6 +42,14 @@ an <code>XQException</code> to be thrown:</p>
 	<li><code>commit()</code></li>
 	<li><code>rollback()</code></li>
 </ul>
+
+<p>If the <code>XQConnection</code> is later used for a local transaction,
+these operations are legal at that point.</p>
+
+<p>If a <code>XQConnection</code> has auto-commit mode enabled at the
+time it joins a global transaction, the attribute will be ignored. The
+auto-commit behavior will resume when the <code>XQConnection</code> returns to
+local transaction mode.</p>
 
 <h3>Example: Using XA classes</h3>
 
@@ -56,7 +73,7 @@ Xid xid = ...;
 // Start the transaction.
 xaResource.start(xid, XAResource.TMNOFLAGS);
 
-// ...Do some work with the database...
+// ... Perform an "update" operation against the datasource ...
 
 // End the transaction.
 xaResource.end(xid, XAResource.TMSUCCESS);
@@ -67,7 +84,7 @@ xaResource.prepare(xid);
 // Commit the transaction.
 xaResource.commit(xid, false);
 
-// Close the XA connection when done.  This implicitly
+// Close the XA connection when done. This implicitly
 // closes the XA resource.
 xaConnection.close();
 </pre>

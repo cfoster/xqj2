@@ -48,7 +48,7 @@ public interface XQConnection2 extends XQConnection
    *
    * <p>Invoking XQuery Functions from Java in this manner was described
    * in the presentation
-   * <a href="http://www.xmlprague.cz/2012/files/xmlprague-2012-proceedings.pdf#page=197">
+   * <a href="http://archive.xmlprague.cz/2012/files/xmlprague-2012-proceedings.pdf#page=197">
    * Building Bridges from Java to XQuery</a>
    * at <a href="http://www.xmlprague.cz/2012/">XML Prague 2012</a>.
    * </p>
@@ -85,7 +85,7 @@ public interface XQConnection2 extends XQConnection
    *
    * <p>Invoking XQuery Functions from Java in this manner was described in
    * the presentation
-   * <a href="http://www.xmlprague.cz/2012/files/xmlprague-2012-proceedings.pdf#page=197">
+   * <a href="http://archive.xmlprague.cz/2012/files/xmlprague-2012-proceedings.pdf#page=197">
    * Building Bridges from Java to XQuery</a>
    * at <a href="http://www.xmlprague.cz/2012/">XML Prague 2012</a>.
    * </p>
